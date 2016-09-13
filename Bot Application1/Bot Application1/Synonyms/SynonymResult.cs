@@ -11,10 +11,19 @@ namespace Bot_Application1
         public Noun noun { get; set; }
 
         public Verb verb { get; set; }
+        public Adverb adverb { get; set; }
 
     }
 
     public class Adjective
+    {
+        public List<string> syn { get; set; }
+        public List<string> sim { get; set; }
+
+        public List<string> rel { get; set; }
+    }
+
+    public class Adverb
     {
         public List<string> syn { get; set; }
         public List<string> sim { get; set; }

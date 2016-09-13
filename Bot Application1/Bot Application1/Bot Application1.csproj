@@ -149,7 +149,6 @@
     <Compile Include="Synonyms\SynonymResult.cs" />
     <Compile Include="Synonyms\SynonymClient.cs" />
     <Compile Include="Synonyms\SynonymsService.cs" />
-    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

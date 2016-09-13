@@ -30,23 +30,9 @@ namespace Bot_Application1
                 int length = (activity.Text ?? string.Empty).Length;
 
                 // return our reply to the user
-                Activity reply = activity.CreateReply($"You sent: {activity.Text}, " +
-                                                      $"I say {similarSentence} ");
+                Activity reply = activity.CreateReply(similarSentence);
                 await connector.Conversations.ReplyToActivityAsync(reply);
 
-                //await Conversation.SendAsync(activity, () =>
-                //      new WeatherDialog()
-                //        .ContinueWith<WeatherParam, string>(async (ctx, wpa) =>
-                //        {
-                //            var WP = await wpa;
-                //            return new ChoiceDialog($"Do you want to subscribe to weather in {WP.Location}", new string[] { "Yes", "No" });
-                //        })
-                //        .ContinueWith<string, string>(async (ctx, aa) =>
-                //        {
-                //            var a = await aa;
-                //            if (a.ToLower() == "yes") return new StringDialog("What is your name?");
-                //            else return new StringDialog("Why not?");
-                //        }));
             }
             else
             {

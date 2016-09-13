@@ -59,17 +59,18 @@ namespace Bot_Application1.SynonymClient
             }
             else
             {
-                if (response.Content != null && response.Content.Headers.ContentType.MediaType.Contains(JsonContentTypeHeader))
-                {
-                    var errorObjectString = await response.Content.ReadAsStringAsync();
-                    ClientError errorCollection = JsonConvert.DeserializeObject<ClientError>(errorObjectString);
-                    if (errorCollection != null)
-                    {
-                        throw new ClientException(errorCollection, response.StatusCode);
-                    }
-                }
+                return default(TResponse);
+                //if (response.Content != null && response.Content.Headers.ContentType.MediaType.Contains(JsonContentTypeHeader))
+                //{
+                //    var errorObjectString = await response.Content.ReadAsStringAsync();
+                //    ClientError errorCollection = JsonConvert.DeserializeObject<ClientError>(errorObjectString);
+                //    if (errorCollection != null)
+                //    {
+                //        throw new ClientException(errorCollection, response.StatusCode);
+                //    }
+                //}
 
-                response.EnsureSuccessStatusCode();
+                //response.EnsureSuccessStatusCode();
             }
 
             return default(TResponse);
