@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="EmotionsTrackerVEV.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EmotionsTrackerVEV"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <local:MainPageModel x:Key="Model" />
+    </Page.Resources>
+<!--Command="{Binding StartAnalysisCommand, Source={StaticResource Model}}"-->
+    <Grid DataContext="{StaticResource Model}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:ConnectionId='1' x:Name="button" Content="Emotions chart" HorizontalAlignment="Left" Margin="35,191,0,0" VerticalAlignment="Top" 
+                Width="138"                      />
+        <TextBlock x:ConnectionId='2' x:Name="textBlock" HorizontalAlignment="Left" Margin="35,69,0,0" TextWrapping="Wrap" Text="{Binding Analyzer.PathToPhotosSet}" VerticalAlignment="Top" />
+
+    </Grid>
+</Page>
+
